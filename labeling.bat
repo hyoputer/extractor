@@ -9,7 +9,7 @@ set numfiles=0
 for /f "delims=" %%i in (list) do (
 for /f "delims=" %%j in (checklist.txt) do (
 cd %%i
-dir /s /b | find "%%j" > check
+dir /s /b | find /i "%%j" > check
 set numfiles=0
 for /f "delims=" %%k in (check) do (
 set /a numfiles+=1
