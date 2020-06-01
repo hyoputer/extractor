@@ -15,7 +15,7 @@ for /f "delims=" %%i in (list.txt) do (
       set /a numfiles+=1
       cd %FILESPATH%
       copy %%k %FILESPATH%
-      ren %%j "%%i!numfiles!-%%j"
+      ren %%~nk%%~xk "%%i!numfiles!-%%~nk%%~xk"
     )
     cd "%cd%\%%i"
     del check.txt
