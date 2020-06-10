@@ -1,6 +1,7 @@
 import os
 import shutil
 
+os.system('rm -r files')
 os.system('mkdir files')
 
 checklist = open("checklist.txt", 'r')
@@ -21,7 +22,6 @@ tmp = os.listdir(os.getcwd())
 for dirname in tmp:
   dirpath = os.path.join(os.getcwd(), dirname)
   if os.path.isdir(dirpath) and dirpath != filespath:
-    idx = 1
     for (path, dir, files) in os.walk(dirpath):
       for filename in files:
         copyflag = False
@@ -35,6 +35,11 @@ for dirname in tmp:
             copyflag = True
 
         if copyflag:
-          shutil.copy(fullpath, filespath)
-          os.rename(os.path.join(filespath, filename), os.path.join(filespath, dirname + str(idx) + '-' + filename))
-          idx+=1
+          target = open(fullpath, 'r')
+          data = target.read()
+          txtpath = os.path.join(filespath, dirname + '.txt')
+          if os.path.isfile(txtpath):
+            txt = open(txtpath, 'a')
+          else:
+            txt = open(txtpath, 'w')
+          txt.write(data + '\n')
