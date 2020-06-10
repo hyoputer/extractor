@@ -52,4 +52,5 @@ for dirname in tmp:
             txt = open(txtpath, 'a')
           else:
             txt = open(txtpath, 'w')
+          txt.write(filename+ '\n')
           txt.write(data + '\n')
