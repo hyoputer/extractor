@@ -1,5 +1,5 @@
-# labeller or extractor
-file labeling or extracting python file
+# extractor
+python file extracting file
 
 ## Prerequisite
 make checklist.txt
