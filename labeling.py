@@ -27,11 +27,11 @@ for dirname in tmp:
         copyflag = False
         fullpath = os.path.join(path, filename)
         for ckname in filelist:
-          if ckname == filename:
+          if ckname.lower() == filename.lower():
             copyflag = True
         ext = os.path.splitext(filename)[-1]
         for extname in extlist:
-          if extname == ext:
+          if extname.lower() == ext.lower():
             copyflag = True
 
         if copyflag:
