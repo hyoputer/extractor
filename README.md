@@ -1,4 +1,4 @@
-# labeler or extractor
+# labeller or extractor
 file labeling or extracting python file
 
 ## Prerequisite
