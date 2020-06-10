@@ -1,3 +1,4 @@
+#-*- coding:utf-8 -*-
 import os
 import shutil
 
@@ -45,7 +46,7 @@ for dirname in tmp:
             copyflag = False
 
         if copyflag:
-          target = open(fullpath, 'r')
+          target = open(fullpath, 'r', encoding='utf-8')
           data = target.read()
           txtpath = os.path.join(filespath, dirname + '.txt')
           if os.path.isfile(txtpath):
