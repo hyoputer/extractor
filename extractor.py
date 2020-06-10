@@ -1,20 +1,27 @@
 import os
 import shutil
 
-os.system('rm -r files')
+os.system('rd /s /q files')
 os.system('mkdir files')
 
 checklist = open("checklist.txt", 'r')
 cklist = checklist.readlines()
 
+exception = open("exception.txt", 'r')
+ecps = exception.readlines()
+
 filelist = []
 extlist = []
+ecplist = []
 
 for ck in cklist:
   if (ck[0] == '.'):
     extlist.append(ck.rstrip())
   else:
     filelist.append(ck.rstrip())
+
+for ecp in ecps:
+  ecplist.append(ecp.rstrip())
 
 filespath = os.path.join(os.getcwd(), "files")
 
@@ -33,6 +40,9 @@ for dirname in tmp:
         for extname in extlist:
           if extname.lower() == ext.lower():
             copyflag = True
+        for ecpname in ecplist:
+          if ecpname.lower() == filename.lower():
+            copyflag = False
 
         if copyflag:
           target = open(fullpath, 'r')
