@@ -1,5 +1,6 @@
 # extractor
-python file extracting file
+file extracting file
 
-## Prerequisite
-make checklist.txt
+# Installation
+> pip install pyinstaller
+> pyinstaller --onefile extractor.py
