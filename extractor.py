@@ -6,10 +6,10 @@ import re
 os.system('rd /s /q files')
 os.system('mkdir files')
 
-checklist = open("checklist.txt", 'r')
+checklist = open("checklist.txt", 'r', encoding='utf-8', errors='ignore')
 cklist = checklist.readlines()
 
-exception = open("exception.txt", 'r')
+exception = open("exception.txt", 'r', encoding='utf-8', errors='ignore')
 ecps = exception.readlines()
 
 filelist = []
@@ -70,6 +70,6 @@ for dirname in tmp:
           if os.path.isfile(txtpath):
             txt = open(txtpath, 'a', encoding='utf-8', errors='ignore')
           else:
-            txt = open(txtpath, 'w')
+            txt = open(txtpath, 'w', encoding='utf-8', errors='ignore')
           txt.write(filename+ '\n')
           txt.write(data + '\n')
