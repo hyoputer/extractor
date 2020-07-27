@@ -140,3 +140,4 @@ cython_debug/
 test
 *.txt
 files
+*.sh
