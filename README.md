@@ -2,5 +2,7 @@
 file extracting file
 
 # Installation
-> pip install pyinstaller
-> pyinstaller --onefile extractor.py
+```bash
+pip install pyinstaller 
+pyinstaller --onefile extractor.py
+```
